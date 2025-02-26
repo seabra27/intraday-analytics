@@ -1,0 +1,26 @@
+-- Contagem total de registros por tabela
+SELECT 'DEPARA_SKILL' AS Tabela, COUNT(*) AS Total_Registros FROM DEPARA_SKILL
+UNION ALL
+SELECT 'FORECAST', COUNT(*) FROM FORECAST
+UNION ALL
+SELECT 'HAGENT', COUNT(*) FROM HAGENT
+UNION ALL
+SELECT 'HSPLIT', COUNT(*) FROM HSPLIT;
+
+-- Verificar se há valores nulos em colunas importantes
+SELECT * FROM DEPARA_SKILL WHERE id IS NULL;
+SELECT * FROM FORECAST WHERE id IS NULL OR DATA IS NULL;
+SELECT * FROM HAGENT WHERE Data IS NULL;
+SELECT * FROM HSPLIT WHERE Data IS NULL;
+
+-- Verificar registros duplicados em tabelas que deveriam ter valores únicos
+SELECT id, COUNT(*) AS Qtd FROM FORECAST GROUP BY id HAVING COUNT(*) > 1;
+SELECT id, COUNT(*) AS Qtd FROM DEPARA_SKILL GROUP BY id HAVING COUNT(*) > 1;
+SELECT Data, COUNT(*) AS Qtd FROM HAGENT GROUP BY Data HAVING COUNT(*) > 1;
+SELECT Data, COUNT(*) AS Qtd FROM HSPLIT GROUP BY Data HAVING COUNT(*) > 1;
+
+-- Verificar os primeiros registros de cada tabela para inspeção manual
+SELECT TOP 10 * FROM DEPARA_SKILL;
+SELECT TOP 10 * FROM FORECAST;
+SELECT TOP 10 * FROM HAGENT;
+SELECT TOP 10 * FROM HSPLIT;
