@@ -127,7 +127,9 @@ Este projeto é disponibilizado sob a licença MIT. Para mais detalhes, consulte
 ## 📩 Contato
 
 Para dúvidas ou sugestões, entre em contato:
+
 📩 Email: pedroseabra2701@gmail.com
+
 🌐 LinkedIn: https://linkedin.com/in/seu-perfil)](https://www.linkedin.com/in/pedro-silva-seabra-de-oliveira
 
 
